@@ -1,0 +1,779 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+    background: #101010;
+    color: #fffefe;
+}
+
+/* Header styles */
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("BACKGROUND.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This makes it "stick" while scrolling */
+}
+
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* 
+#log {
+    
+    
+} */
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.10s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top: 10%;
+    font-size: 15px;
+}
+
+.header-text h1 {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.header-text h1 span {
+    color: red;
+}
+
+/* About section styles */
+#about {
+    padding: 80px 0;
+    color: rgb(239, 236, 236);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.tab-title {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #f80202;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #f60606;
+    font-size: 18px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* Services section container */
+#services {
+    padding: 30px 0;
+  }
+  
+  /* Container grid */
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  /* Each card styling */
+  .service-card {
+    background: #1b1a1a;
+    padding: 40px 30px;
+    border-radius: 10px;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 340px;
+    transition: background 0.5s ease, transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-card:hover {
+    background: #d41818;
+    transform: translate(-10px);
+    color: #fff;
+  }
+  
+  /* Icon styling */
+  .service-card i {
+    font-size: 50px;
+    margin-bottom: 25px;
+    color: #d41818;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .service-card:hover i {
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  /* Headings */
+  .service-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: inherit; /* Changes color on hover */
+  }
+  
+  /* Paragraphs */
+  .service-card p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: inherit;
+  }
+  
+  /* Button container */
+  .btn-group {
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none; /* Disable clicks when hidden */
+  }
+  
+  /* Show buttons on hover */
+  .service-card:hover .btn-group {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Buttons base */
+  .btn-cta {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #fefdfd;
+    color: #fefdfd;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+  }
+  
+  /* View Work button */
+  .btn-cta.view-work:hover {
+    background-color: #fefdfd;
+    color: #d41818;
+    border-color: #d41818;
+  }
+  .btn-cta.view-work {
+    background-color: #fefdfd;
+    color: #1b1a1a;
+    border-color: #fefdfd;
+
+  }
+  
+  /* Hire Me button base (inverted style) */
+  .btn-cta.hire-me {
+    background-color: #fefdfd;
+    color: #1b1a1a;
+    border-color: #fefdfd;
+  }
+  
+  .btn-cta.hire-me:hover {
+    background-color: #fefdfd;
+    color: #d41818;
+    border-color: #d41818;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    .services-list {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .service-card {
+      padding: 30px 20px;
+      min-height: auto;
+    }
+    .service-card h2 {
+      font-size: 20px;
+    }
+    .service-card p {
+      font-size: 13px;
+    }
+    .btn-group {
+      gap: 12px;
+    }
+  }
+
+
+  /* Projects section */
+.projects-section {
+    padding: 50px 0;
+    background-color: #121212; /* Slightly darker for contrast */
+    color: #eee;
+    font-weight: 300;
+  }
+  
+  .projects-section .sub-title {
+    color: #d41818;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .projects-section .section-intro {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  
+  /* Grid for projects */
+  .projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+  }
+  
+  /* Individual project card */
+  .project-item {
+    background: #1b1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, background 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .project-item:hover {
+    background: #d41818;
+    transform: translateY(-8px);
+    color: #fff;
+  }
+  
+  .project-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+  }
+  
+  .project-item:hover img {
+    filter: brightness(1);
+  }
+  
+  .project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-info h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: inherit;
+  }
+  
+  .project-info p {
+    flex-grow: 1;
+    font-size: 14px;
+    color: inherit;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  
+  .project-info .btn-cta {
+    align-self: flex-start;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 2px solid #fefdfd;
+    color: #fefdfd;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .project-info .btn-cta:hover {
+    background-color: #fefdfd;
+    color: #d41818;
+    border-color: #d41818;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    .project-info h2 {
+      font-size: 18px;
+    }
+    .project-info p {
+      font-size: 13px;
+    }
+  }
+
+  /* Main card style */
+.service-card.social-media-card {
+    background: #1b1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    color: #fefdfd;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .service-card.social-media-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #3b5998; /* Facebook blue vibe */
+  }
+  
+  .service-card.social-media-card p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .btn-cta {
+    background-color: #d41818;
+    border: none;
+    padding: 12px 25px;
+    color: #fefdfd;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cta:hover {
+    background-color: #a30f0f;
+  }
+  
+  /* Hidden projects container */
+  .hidden-projects {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  .hidden-projects.show {
+    display: grid;
+  }
+  
+  /* Each project card */
+  .project-card {
+    background: #2a2929;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fefdfd;
+    font-weight: 300;
+    box-shadow: 0 0 8px rgba(212, 24, 24, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  
+  
+/* Contact section styles */
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #eadfe2;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.contact-icons 
+{
+    margin-top: 30px;
+}
+.contact-icons i:hover
+{
+    color: #ff0000;
+    transform: translateY(-5px);
+}
+
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #ff0000;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+    justify-content: center;
+}
+
+form .btn.btn2 {
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 14px 60px;
+    font-size: 18px;
+}
+
+/* ... (add any additional styles if needed) ... */
+.copyright
+{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #393939;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i
+{
+    color: rgb(34, 33, 33);
+}
+/* --------css for small screen--- */
+nav .fa-solid
+{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width:600px)
+{
+    #header{
+        background-image: url(BACKGROUND.png);
+    }
+    .header-text
+    {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    nav .fa-solid
+    {
+    display: block;
+    font-size: 25px;
+    }
+    nav ul {
+        background:rgb(247, 24, 24);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px ;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px ;
+        left: 25px;
+        cursor: pointer;
+        
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links
+    {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+}
+#msg
+{
+    color: #61b752;
+    margin-bottom:-40px;
+    display: block;
+    margin-left: -20px;
+}
+.project-card with-media {
+    padding: 20px;
+    background-color: transparent
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    
+  }
+  .project-card with-media h3{
+    
+  }
+  
+  .project-thumbnail {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: contain;
+background-color: #f9f9f9;
+
+
+  }
+  
+  
+  .media-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .gallery-img,
+  .gallery-video {
+    width: 32%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  /* Web Dev Project Section Styles */
+/* === Web Development Card === */
+.service-card.web-dev-card {
+    background: #1b1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    color: #fefdfd;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    border-left: 5px solid #cc0000; /* Dev blue highlight */
+  }
+  
+  .service-card.web-dev-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #cc0000; /* Dev blue icon */
+  }
+  
+  .service-card.web-dev-card p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  /* Hidden Web Dev Projects */
+  #webDevProjects {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  #webDevProjects.show {
+    display: grid;
+  }
+  
+  /* Web Dev Project Cards */
+  .web-dev-card-item {
+    background: #2a2929;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fefdfd;
+    font-weight: 300;
+    box-shadow: 0 0 8px rgba(204, 0, 0, 0.5); /* subtle blue glow */
+    transition: transform 0.3s ease;
+  }
+  
+  .web-dev-card-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Optional: Image styling if using thumbnails in future */
+  .web-dev-card-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* CTA Button (Shared) */
+  .btn-cta {
+    background-color: #d41818;
+    border: none;
+    padding: 12px 25px;
+    color: #fefdfd;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cta:hover {
+    background-color: #a30f0f;
+  }
